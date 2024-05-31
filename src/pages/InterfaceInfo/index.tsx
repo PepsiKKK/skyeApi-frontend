@@ -90,28 +90,28 @@ const Index: React.FC = () => {
             <Descriptions.Item label="创建时间">{data.createTime}</Descriptions.Item>
             <Descriptions.Item label="更新时间">{data.updateTime}</Descriptions.Item>
           </Descriptions>
-          ) : (
-            <>接口不存在</>
-          )
+        ) : (
+          <>接口不存在</>
+        )
         }
       </Card>
-      <Divider />
-        <Card title="在线测试">
-          <Form name="invoke" layout="vertical" onFinish={onFinish}>
-            {/* 创建一个表单项,用于输入请求参数,表单项名称为"userRequestParams" */}
-            <Form.Item label="请求参数" name="userRequestParams">
-              <Input.TextArea />
-            </Form.Item>
-            {/* 创建一个包裹项,设置其宽度占据 16 个栅格列 */}
-            <Form.Item wrapperCol={{ span: 16 }}>
-              {/* 创建调用按钮*/}
-              <Button type="primary" htmlType="submit">
-                调用
-              </Button>
-            </Form.Item>
-          </Form>
-        </Card>
-      <Divider />
+      <Divider/>
+      <Card title="在线测试">
+        <Form name="invoke" layout="vertical" onFinish={onFinish}>
+          {/* 创建一个表单项,用于输入请求参数,表单项名称为"userRequestParams" */}
+          <Form.Item label="请求参数" name="userRequestParams">
+            <Input.TextArea/>
+          </Form.Item>
+          {/* 创建一个包裹项,设置其宽度占据 16 个栅格列 */}
+          <Form.Item wrapperCol={{span: 16}}>
+            {/* 创建调用按钮*/}
+            <Button type="primary" htmlType="submit">
+              调用
+            </Button>
+          </Form.Item>
+        </Form>
+      </Card>
+      <Divider/>
       <Card title="返回结果" loading={invokeLoading}>
         {invokeRes}
       </Card>
